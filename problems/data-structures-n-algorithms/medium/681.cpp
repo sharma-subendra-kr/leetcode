@@ -13,62 +13,6 @@ using namespace std;
 
 #include "../../../utils/customString.h"
 
-// int getSeconds(string time) {
-// 	vector<string> data;
-// 	if (time.size() == 5) {
-// 		data = split(time, ':');
-// 	} else {
-// 		data.push_back(time.substr(0, 2));
-// 		data.push_back(time.substr(2, 2));
-// 	}
-
-// 	int seconds = 0;
-// 	seconds += stoi(data[0]) * 60 * 60;
-// 	seconds += stoi(data[1]) * 60;
-
-// 	return seconds;
-// }
-
-// void swap(int i, int j, string &str) {
-// 	char temp = str[j];
-// 	str[j] = str[i];
-// 	str[i] = temp;
-// }
-
-// void getPermutations(string str, int index, vector<int> &res) {
-// 	if (index == str.size() - 1) {
-// 		int seconds = getSeconds(str);
-// 		if (seconds <= 86340) {
-// 			res.push_back(seconds);
-// 		}
-// 		return;
-// 	}
-
-// 	for (int i = index; i < str.size(); i++) {
-// 		swap(index, i, str);
-// 		getPermutations(str, index + 1, res);
-// 		swap(i, index, str);
-// 	}
-// }
-
-// string nextClosestTime(string time) {
-// 	int seconds = getSeconds(time);
-// 	vector<string> _time = split(time, ':');
-
-// 	string input = accumulate(_time.begin(), _time.end(), string(""));
-// 	vector<int> times;
-// 	getPermutations(input, 0, times);
-
-// 	sort(times.begin(), times.end());
-
-// 	for (int i = 0; i < times.size(); i++) {
-// 		if (times[i] > seconds) {
-// 		}
-// 	}
-
-// 	return time;
-// }
-
 int getTime(string time) {
 	int m1 = (int)time[4] - 48;
 	int m2 = (int)time[3] - 48;
