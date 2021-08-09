@@ -1,0 +1,7 @@
+* open folder as project
+* right click on project root, then select "Mark Directory as", then choose "Source Root"
+	otherwise run option won't come in intellij
+	this will create a new file called leetcode.imp in the project root
+	this file is committed in git
+* intellij creates "out" folder, this is marked as ignore in gitignore file
+* .idea folder is commited in git
