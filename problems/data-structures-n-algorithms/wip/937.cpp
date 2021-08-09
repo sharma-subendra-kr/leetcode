@@ -13,6 +13,8 @@ using namespace std;
 
 #include "../../../utils/customString.h"
 
+// overall correct soln but does't work in c++ cuz of nature of sort function
+
 int getWeight(char c) {
 	int a;
 
