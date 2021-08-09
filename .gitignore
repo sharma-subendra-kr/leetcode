@@ -1,4 +1,5 @@
 a.out*
+*.class
 *.swp
 *-workspace*
 node_modules
