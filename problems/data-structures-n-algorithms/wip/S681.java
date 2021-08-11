@@ -1,9 +1,10 @@
 // 681. Next Closest Time
 // https://leetcode.com/problems/next-closest-time/
 
+// better use sorted sets to find next number
+// find number in sorted set and get the next one
+
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 class S681 {
 	public static void main (String[] args) {
