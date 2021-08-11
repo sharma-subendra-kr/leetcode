@@ -4,4 +4,4 @@ a.out*
 *-workspace*
 node_modules
 out
-
+.idea/sonarlint/issuestore
