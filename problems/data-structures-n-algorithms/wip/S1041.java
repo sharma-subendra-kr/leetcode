@@ -3,6 +3,7 @@
 
 import java.util.LinkedList;
 
+// This is a valid solution. but its slightly LONG but nothing wrong with it!
 // class S1041 {
 //
 // 	public static void main (String[] args) {
