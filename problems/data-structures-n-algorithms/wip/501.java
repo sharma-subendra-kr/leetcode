@@ -6,8 +6,8 @@ import com.sun.source.tree.Tree;
 import java.util.ArrayList;
 import java.util.Stack;
 
+// Revisit Morris traversal
 class S501 {
-
 	public static void main (String[] args) {
 		// TreeNode root = new TreeNode(1);
 		// TreeNode node1 = new TreeNode(2);
