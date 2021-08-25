@@ -4,7 +4,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-// use bucket sort for better performance
+// Use bucket sort for better performance since the max number of units in a box is known in advance.
 class S1710 {
 	public static void main (String[] args) {
 		int[][] boxTypes;
