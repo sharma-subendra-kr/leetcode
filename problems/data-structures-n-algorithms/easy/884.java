@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-class Solution {
+class S884 {
 	public static void main (String[] args) {
 		String s1, s2;
 
