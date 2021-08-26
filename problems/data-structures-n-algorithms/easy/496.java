@@ -1,6 +1,9 @@
 // 496. Next Greater Element I
 // https://leetcode.com/problems/next-greater-element-i/
 
+import java.util.HashMap;
+import java.util.Stack;
+
 class S496 {
 	public static void main (String args[]) {
 		int[] nums1, nums2;
@@ -15,26 +18,43 @@ class S496 {
 		}
 	}
 
-	public static int[] nextGreaterElement (int[] nums1, int[] nums2) {
-		int[] map = new int[10000];
-		int[] res = new int[nums1.length];
+	// public static int[] nextGreaterElement (int[] nums1, int[] nums2) {
+	// 	int[] map = new int[10000];
+	// 	int[] res = new int[nums1.length];
+	//
+	// 	for (int i = 0; i < nums2.length; i++) {
+	// 		map[nums2[i]] = i;
+	// 	}
+	//
+	// 	for (int i = 0; i < nums1.length; i++) {
+	// 		int result = -1;
+	// 		int j = map[nums1[i]] + 1;
+	// 		while (j < nums2.length) {
+	// 			if (nums2[j] > nums1[i]) {
+	// 				result = nums2[j];
+	// 				break;
+	// 			}
+	// 			j++;
+	// 		}
+	// 		res[i] = result;
+	// 	}
+	// 	return res;
+	// }
 
-		for (int i = 0; i < nums2.length; i++) {
-			map[nums2[i]] = i;
+	public static int[] nextGreaterElement (int[] nums1, int[] nums2) {
+		HashMap<Integer, Integer> map = new HashMap<>();
+		Stack<Integer> stack = new Stack<>();
+
+		for (int num : nums2) {
+			while (!stack.isEmpty() && num > stack.peek()) {
+				map.put(stack.pop(), num);
+			}
+			stack.push(num);
 		}
 
 		for (int i = 0; i < nums1.length; i++) {
-			int result = -1;
-			int j = map[nums1[i]] + 1;
-			while (j < nums2.length) {
-				if (nums2[j] > nums1[i]) {
-					result = nums2[j];
-					break;
-				}
-				j++;
-			}
-			res[i] = result;
+			nums1[i] = map.getOrDefault(nums1[i], -1);
 		}
-		return res;
+		return nums1;
 	}
 }
