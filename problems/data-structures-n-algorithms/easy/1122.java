@@ -23,6 +23,7 @@ class S1122 {
 		}
 	}
 
+	// use tree map
 	public static int[] relativeSortArray (int[] arr1, int[] arr2) {
 		HashMap<Integer, Integer> map = new HashMap<>();
 
