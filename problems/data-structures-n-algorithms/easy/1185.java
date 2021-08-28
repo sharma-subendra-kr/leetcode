@@ -30,8 +30,6 @@ class S1185 {
 		int monthToDays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 		String daysMap[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-		boolean isLeapYear = year % 4 == 0;
-
 		int sum = (year - 1) * 365;
 		sum += (year - 1) / 4;
 		sum -= (year - 1) / 100;
@@ -43,7 +41,7 @@ class S1185 {
 			c--;
 		}
 
-		if (month > 2 && (isLeapYear && year % 100 != 0) || month > 2 && year % 400 == 0) {
+		if (month > 2 && year % 4 == 0 && year % 100 != 0 || month > 2 && year % 400 == 0) {
 			sum += 1;
 		}
 
