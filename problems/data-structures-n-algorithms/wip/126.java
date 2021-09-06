@@ -24,18 +24,68 @@ class S126 {
 		}
 	}
 
-	// Time limit exceeded
+	// Time limit exceeded - 19 cases passed
+	// public static List<List<String>> findLadders (String beginWord, String endWord, List<String> wordList) {
+	// 	List<List<String>> result = new ArrayList<>();
+	// 	AtomicInteger minLength = new AtomicInteger(Integer.MAX_VALUE);
+	//
+	// 	for (int i = 0; i < wordList.size(); i++) {
+	// 		if (compareString(beginWord, wordList.get(i))) {
+	// 			LinkedHashSet<String> set = new LinkedHashSet<>();
+	// 			set.add(beginWord);
+	// 			dfs(endWord, wordList, set, i, result, minLength);
+	// 		}
+	// 	}
+	//
+	// 	return result.stream().filter(item -> item.size() == minLength.get()).collect(Collectors.toList());
+	// }
+	//
+	// public static boolean compareString (String a, String b) {
+	// 	if (a.length() != b.length()) {
+	// 		return false;
+	// 	}
+	// 	int count = 0;
+	// 	for (int i = 0; i < a.length(); i++) {
+	// 		if (a.charAt(i) != b.charAt(i)) {
+	// 			count++;
+	// 		}
+	// 	}
+	// 	return count == 1 ? true : false;
+	// }
+	//
+	// public static void dfs (String endWord, List<String> wordList, LinkedHashSet<String> set,
+	//                         int current, List<List<String>> result, AtomicInteger minLength) {
+	// 	if (minLength.get() == set.size()) {
+	// 		return;
+	// 	}
+	// 	if (wordList.get(current).equalsIgnoreCase(endWord)) {
+	// 		set.add(wordList.get(current));
+	// 		List<String> temp = set.stream().collect(Collectors.toList());
+	// 		if (temp.size() <= minLength.get()) {
+	// 			minLength.set(temp.size());
+	// 			result.add(temp);
+	// 		}
+	// 		return;
+	// 	}
+	//
+	// 	for (int i = 0; i < wordList.size(); i++) {
+	// 		if (!set.contains(wordList.get(i)) && compareString(wordList.get(current), wordList.get(i))) {
+	// 			LinkedHashSet<String> temp = new LinkedHashSet<>();
+	// 			temp.addAll(set);
+	// 			temp.add(wordList.get(current));
+	// 			dfs(endWord, wordList, temp, i, result, minLength);
+	// 		}
+	// 	}
+	// }
+
+	// Time limit exceeded - 21 cases passed
 	public static List<List<String>> findLadders (String beginWord, String endWord, List<String> wordList) {
 		List<List<String>> result = new ArrayList<>();
 		AtomicInteger minLength = new AtomicInteger(Integer.MAX_VALUE);
 
-		for (int i = 0; i < wordList.size(); i++) {
-			if (compareString(beginWord, wordList.get(i))) {
-				LinkedHashSet<String> set = new LinkedHashSet<>();
-				set.add(beginWord);
-				dfs(endWord, wordList, set, i, result, minLength);
-			}
-		}
+		LinkedHashSet<String> set = new LinkedHashSet<>();
+		set.add(beginWord);
+		dfs(endWord, wordList, set, beginWord, result, minLength);
 
 		return result.stream().filter(item -> item.size() == minLength.get()).collect(Collectors.toList());
 	}
@@ -54,27 +104,36 @@ class S126 {
 	}
 
 	public static void dfs (String endWord, List<String> wordList, LinkedHashSet<String> set,
-	                        int current, List<List<String>> result, AtomicInteger minLength) {
+	                        String prev, List<List<String>> result, AtomicInteger minLength) {
 		if (minLength.get() == set.size()) {
 			return;
 		}
-		if (wordList.get(current).equalsIgnoreCase(endWord)) {
-			set.add(wordList.get(current));
-			List<String> temp = set.stream().collect(Collectors.toList());
-			if (temp.size() <= minLength.get()) {
-				minLength.set(temp.size());
-				result.add(temp);
+
+		boolean flag = false;
+		ArrayList<String> level = new ArrayList<>();
+		for (int i = 0; i < wordList.size(); i++) {
+			if (!set.contains(wordList.get(i)) && compareString(prev, wordList.get(i))) {
+				if (wordList.get(i).equalsIgnoreCase(endWord)) {
+					flag = true;
+					set.add(wordList.get(i));
+					List<String> temp = set.stream().collect(Collectors.toList());
+					result.add(temp);
+					minLength.set(set.size());
+				} else {
+					level.add(wordList.get(i));
+				}
 			}
+		}
+
+		if (flag == true) {
 			return;
 		}
 
-		for (int i = 0; i < wordList.size(); i++) {
-			if (!set.contains(wordList.get(i)) && compareString(wordList.get(current), wordList.get(i))) {
-				LinkedHashSet<String> temp = new LinkedHashSet<>();
-				temp.addAll(set);
-				temp.add(wordList.get(current));
-				dfs(endWord, wordList, temp, i, result, minLength);
-			}
+		for (String str : level) {
+			LinkedHashSet<String> temp = new LinkedHashSet<>();
+			temp.addAll(set);
+			temp.add(str);
+			dfs(endWord, wordList, temp, str, result, minLength);
 		}
 	}
 }
