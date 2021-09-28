@@ -3,7 +3,7 @@
 
 import java.util.Arrays;
 
-public class S685 {
+class S685 {
 	public static void main (String[] args) {
 		int[][] edges;
 
