@@ -44,7 +44,16 @@ class S1153 {
 				map[c1] = c2;
 				valuesCount.add(c2);
 				if (c1 != c2 && valuesCount.size() == 26) {
-					// here we are trying to break the cycle and make changes and again recreate the cycle
+					// question says in one conversion we can convert all occurrences of suppose 'a' to 'c'
+					// suppose we have a -> c -> a
+					// here we convert all as' to cs' in str1
+					// now when we see
+					// c -> a, we already have converted all as' to cs'
+					// so we will be converting already converted cs' to as'
+					// to prevent this first we convert all as' to extra available character suppose 'z'
+					// so now all as' will be converted to zs'
+					// then we convert all cs' to as'
+					// then we convert all zs' to cs'
 					return false;
 				}
 			} else if (map[c1] != c2) {
