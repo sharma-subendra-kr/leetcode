@@ -15,10 +15,10 @@ class S833 {
 		indices = new int[]{0, 2};
 		sources = new String[]{"a", "cd"};
 		targets = new String[]{"eee", "ffff"};
-		s = "abcd";
-		indices = new int[]{0, 2};
-		sources = new String[]{"ab", "ec"};
-		targets = new String[]{"eee", "ffff"};
+		// s = "abcd";
+		// indices = new int[]{0, 2};
+		// sources = new String[]{"ab", "ec"};
+		// targets = new String[]{"eee", "ffff"};
 
 		String res = findReplaceString(s, indices, sources, targets);
 
@@ -56,4 +56,27 @@ class S833 {
 		}
 		return sb.toString();
 	}
+
+	// This solution is very very slow, have to use StringBuffer
+	// public static String findReplaceString (String s, int[] indices, String[] sources, String[] targets) {
+	// 	int sorted[][] = new int[indices.length][];
+	// 	for (int i = 0; i < indices.length; i++) {
+	// 		sorted[i] = new int[]{indices[i], i};
+	// 	}
+	// 	Arrays.sort(sorted, new Comparator<int[]>() {
+	// 		@Override
+	// 		public int compare (int[] o1, int[] o2) {
+	// 			return o2[0] - o1[0];
+	// 		}
+	// 	});
+	//
+	// 	for (int i = 0; i < indices.length; i++) {
+	// 		int idx = sorted[i][0];
+	// 		String str = s.substring(idx, idx + sources[sorted[i][1]].length());
+	// 		if (str.equals(sources[sorted[i][1]])) {
+	// 			s = s.substring(0, idx) + targets[sorted[i][1]] + s.substring(idx + str.length());
+	// 		}
+	// 	}
+	// 	return s;
+	// }
 }
