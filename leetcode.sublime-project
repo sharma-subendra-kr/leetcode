@@ -12,5 +12,9 @@
 		},
 		"SublimeLinter.linters.cpplint.disable": true,
 		"SublimeLinter.linters.cppcheck.disable": false,
+		"SublimeLinter.linters.cppcheck.args": [],
+		"SublimeLinter.linters.cppcheck.enable": ["style", "unusedFunction"],
+		"SublimeLinter.linters.cppcheck.exclude": [],
+		"SublimeLinter.linters.cppcheck.std": ["c++11", "c11"],
 	},
 }
