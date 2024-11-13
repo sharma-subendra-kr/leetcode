@@ -37,5 +37,6 @@ class S857 {
 				return o1.quality/o1.wage - o2.quality/o2.wage;
 			}
 		});
+		return 0;
 	}
 }
