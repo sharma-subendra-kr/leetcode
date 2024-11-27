@@ -42,7 +42,7 @@ class S120 {
 	// 	Integer minSum = Integer.MAX_VALUE;
 	// 	Integer size = triangle.size();
 	// 	Integer[] sizes = new Integer[size];
-	// 	List<List<Integer>> memo = new ArrayList<>();
+	// 	List<List<Integer>> memo = new ArrayList<>(Collections.nCopies(size, null));
 	//
 	// 	for (int i = 0; i < size; i++) {
 	// 		int len = triangle.get(i).size();
@@ -64,12 +64,18 @@ class S120 {
 	//
 	// 		if (topY < size && topX < sizes[topY]) {
 	// 			top = triangle.get(topY).get(topX);
-	// 		}
 	//
-	// 		if (memo.get(topY).get(topX) != Integer.MIN_VALUE) {
-	// 			yStack.pop();
-	// 			xStack.pop();
-	// 			sumStack.pop();
+	// 			if (memo.get(topY).get(topX) != Integer.MIN_VALUE) {
+	// 				yStack.pop();
+	// 				xStack.pop();
+	// 				sumStack.pop();
+	//
+	// 				if (memo.get(topY).get(topX) != Integer.MIN_VALUE &&
+	// 				    sum + memo.get(topY).get(topX) < minSum) {
+	// 					minSum = sum + memo.get(topY).get(topX);
+	// 				}
+	// 				continue;
+	// 			}
 	// 		}
 	//
 	// 		if (topY == size || direction == 1) {
