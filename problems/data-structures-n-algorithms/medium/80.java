@@ -33,7 +33,9 @@ class S80 {
 			if (nums[left] != Integer.MIN_VALUE) {
 				left++;
 			} else {
-				right = left + 1;
+				if (right <= left) {
+					right = left + 1;
+				}
 				while (right < len && nums[right] == Integer.MIN_VALUE) {
 					right++;
 				}
