@@ -13,42 +13,53 @@ class S80 {
 
 	public static int removeDuplicates (int[] nums) {
 		int len = nums.length;
-		int left = 0;
-		int right = 1;
-		int temp;
-		int count = 0;
-		int prev = nums[0];
-		int prevIdx = 0;
-		for (int i = 1; i < len; i++) {
-			if (nums[i] == prev && i - prevIdx > 1) {
-				nums[i] = Integer.MIN_VALUE;
-				count++;
-			} else if (nums[i] != prev) {
-				prev = nums[i];
-				prevIdx = i;
+		int j = 2;
+		for (int i = 2; i < len; i++) {
+			if (nums[i] > nums[j - 2]) {
+				nums[j++] = nums[i];
 			}
 		}
-
-		while (right < len && left < len - 1) {
-			if (nums[left] != Integer.MIN_VALUE) {
-				left++;
-			} else {
-				if (right <= left) {
-					right = left + 1;
-				}
-				while (right < len && nums[right] == Integer.MIN_VALUE) {
-					right++;
-				}
-				if (right < len) {
-					temp = nums[left];
-					nums[left] = nums[right];
-					nums[right] = temp;
-				}
-				left++;
-				right++;
-			}
-		}
-
-		return len - count;
+		return j;
 	}
+
+	// public static int removeDuplicates (int[] nums) {
+	// 	int len = nums.length;
+	// 	int left = 0;
+	// 	int right = 1;
+	// 	int temp;
+	// 	int count = 0;
+	// 	int prev = nums[0];
+	// 	int prevIdx = 0;
+	// 	for (int i = 1; i < len; i++) {
+	// 		if (nums[i] == prev && i - prevIdx > 1) {
+	// 			nums[i] = Integer.MIN_VALUE;
+	// 			count++;
+	// 		} else if (nums[i] != prev) {
+	// 			prev = nums[i];
+	// 			prevIdx = i;
+	// 		}
+	// 	}
+	//
+	// 	while (right < len && left < len - 1) {
+	// 		if (nums[left] != Integer.MIN_VALUE) {
+	// 			left++;
+	// 		} else {
+	// 			if (right <= left) {
+	// 				right = left + 1;
+	// 			}
+	// 			while (right < len && nums[right] == Integer.MIN_VALUE) {
+	// 				right++;
+	// 			}
+	// 			if (right < len) {
+	// 				temp = nums[left];
+	// 				nums[left] = nums[right];
+	// 				nums[right] = temp;
+	// 			}
+	// 			left++;
+	// 			right++;
+	// 		}
+	// 	}
+	//
+	// 	return len - count;
+	// }
 }
