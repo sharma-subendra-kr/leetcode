@@ -20,8 +20,42 @@ class S30 {
 		// String[] words = new String[]{"a", "b", "a"};
 		// String s = "aaaccccaab";
 		// String[] words = new String[]{"cc", "cc"};
-		String s = "aaaaaaaaaa";
-		String[] words = new String[]{"a", "a", "a", "a", "a"};
+		// String s = "aaaaaaaaaaaaaaaaaaaa";
+		// String[] words = new String[]{"a", "a", "a", "a", "a"};
+		// String s = "a";
+		// String[] words = new String[]{"a", "a"};
+		// String s = "ababababab";
+		// String[] words = new String[]{"ababa", "babab"};
+		// String s = "aaaaaaaaaaaaaa";
+		// String[] words = new String[]{"aa", "aa"};
+		String s =
+			"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+		String[] words =
+			new String[]{"a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+			             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"};
 
 		List<Integer> res = findSubstring(s, words);
 		res.forEach(o -> System.out.print(o + " "));
@@ -33,14 +67,11 @@ class S30 {
 		if (words.length == 0 || s.length() == 0) {
 			return res;
 		}
+
 		int wslen = words.length;
 		int wlen = words[0].length();
 		int slen = s.length();
-		int[] memo = new int[slen];
-		List<HashMap<String, Integer>> mapMemo = new ArrayList<>(Collections.nCopies(slen, null));
-
-		Arrays.fill(memo, -1);
-
+		HashMap<String, Integer> map = new HashMap<>();
 		HashMap<String, Integer> wMap = new HashMap<>();
 
 		for (int i = 0; i < wslen; i++) {
@@ -50,54 +81,60 @@ class S30 {
 			} else {
 				wMap.put(words[i], 1);
 			}
-
 		}
 
-		for (int i = 0; i <= slen - wlen * wslen; i++) {
-			int count = 0;
-			HashMap<String, Integer> map = new HashMap<>();
-			for (int j = i + (wslen - 1) * wlen; j >= i; j -= wlen) {
-				String str = s.substring(j, j + wlen);
-				Integer wMapVal = wMap.get(str);
-				Integer mapVal = map.get(str);
-				if (memo[j] != -1 && memo[i] == wslen - count) {
-					HashMap<String, Integer> begin = mapMemo.get(i);
-					HashMap<String, Integer> part = mapMemo.get(j + wlen);
-					AtomicBoolean ok = new AtomicBoolean(true);
-					wMap.forEach((key, val) -> {
-						if (!begin.containsKey(key) || !part.containsKey(key) || begin.get(key) + part.get(key) != val) {
-							ok.set(false);
-						}
-					});
-					if (ok.get()) {
-						count = wslen;
-						map = begin;
-						break;
+		for (int i = 0; i < wlen; i++) {
+			map.clear();
+			for (int k = i; k < i + wslen * wlen && k + wlen <= slen; k += wlen) {
+				String str = s.substring(k, k + wlen);
+				Integer val = map.get(str);
+				if (val != null) {
+					map.put(str, ++val);
+				} else {
+					map.put(str, 1);
+				}
+			}
+			int start = i - wlen;
+			int end = i + ((wslen - 1) * wlen);
+			while (end <= slen - wlen) {
+				if (start < 0) {
+					if (compare(wMap, map)) {
+						res.add(start + wlen);
+					}
+				} else {
+					String startStr = s.substring(start, start + wlen);
+					String endStr = s.substring(end, end + wlen);
+
+					Integer startVal = map.get(startStr);
+					startVal--;
+					map.put(startStr, startVal);
+					Integer endVal = map.get(endStr);
+					if (endVal != null) {
+						endVal++;
+					} else {
+						endVal = 1;
+					}
+					map.put(endStr, endVal);
+
+					if (compare(wMap, map)) {
+						res.add(start + wlen);
 					}
 				}
-				if (wMapVal != null && (mapVal == null || mapVal < wMapVal)) {
-					map.put(str, mapVal == null ? 1 : ++mapVal);
-					memo[j] = ++count;
-					mapMemo.set(j, map);
-				} else if (wMap.containsKey(str)) {
-					mapMemo.set(j, new HashMap<>());
-					count = 0;
-					map.put(str, 1);
-					memo[j] = ++count;
-				}
-			}
-
-			if (count == wslen) {
-				res.add(i);
-
-				String str2 = s.substring(i, i + wlen);
-				Integer v = map.get(str2);
-				if (v != null) {
-					v--;
-					map.put(str2, v);
-				}
+				start += wlen;
+				end += wlen;
 			}
 		}
+		res.sort((a, b) -> a - b);
 		return res;
+	}
+
+	public static boolean compare (HashMap<String, Integer> wMap, HashMap<String, Integer> map) {
+		AtomicBoolean isSame = new AtomicBoolean(true);
+		wMap.forEach((key, val) -> {
+			if (map.get(key) == null || !map.get(key).equals(val)) {
+				isSame.set(false);
+			}
+		});
+		return isSame.get();
 	}
 }
