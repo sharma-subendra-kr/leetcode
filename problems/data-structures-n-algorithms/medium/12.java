@@ -21,7 +21,12 @@ class S12 {
 		String[] a10s = new String[]{"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
 		String[] a1s = new String[]{"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 
-		return a1000s[num / 1000] + a100s[num / 100 % 10] + a10s[num / 10 % 10] + a1s[num % 10];
+		StringBuffer res = new StringBuffer();
+		res.append(a1000s[num / 1000]);
+		res.append(a100s[num / 100 % 10]);
+		res.append(a10s[num / 10 % 10]);
+		res.append(a1s[num % 10]);
+		return res.toString();
 	}
 
 	// public static String intToRoman (int num) {
