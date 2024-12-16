@@ -16,7 +16,7 @@ class S12 {
 	}
 
 	public static String intToRoman (int num) {
-		Stack<String> res = new Stack();
+		Stack<StringBuffer> res = new Stack();
 		int place = 1;
 		int rem;
 		Map<Integer, String> m1s =
@@ -38,27 +38,30 @@ class S12 {
 				current = m1000s;
 			}
 
-			String s = "";
+			StringBuffer s = new StringBuffer();
 			if (rem < 4) {
+				StringBuffer temp = new StringBuffer();
 				for (int i = 0; i < rem; i++) {
-					s += current.get(1);
+					temp.append(current.get(1));
 				}
+				s.append(temp);
 			} else if (rem < 5) {
-				s += (current.get(1) + current.get(5));
+				s.append(current.get(1) + current.get(5));
 			} else if (rem == 5) {
-				s += current.get(5);
+				s.append(current.get(5));
 			} else if (rem <= 8) {
-				s += current.get(5);
+				StringBuffer temp = new StringBuffer();
+				temp.append(current.get(5));
 				for (int i = 0; i < rem - 5; i++) {
-					s += current.get(1);
+					temp.append(current.get(1));
 				}
+				s.append(temp);
 			} else if (rem == 9) {
-				s += current.get(9);
-			}
-			if (s != "") {
-				res.push(s);
+				s.append(current.get(9));
 			}
 
+			res.push(s);
+			
 			place *= 10;
 			num /= 10;
 		}
