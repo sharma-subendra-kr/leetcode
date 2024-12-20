@@ -22,25 +22,25 @@ class S637 {
 		List<Double> res = new ArrayList<>();
 		Deque<TreeNode> queue = new ArrayDeque<>();
 		queue.add(root);
+		int size = 1;
 		while (!queue.isEmpty()) {
-			TreeNode start = queue.peekLast();
-			TreeNode curr;
-
 			long sum = 0;
 			int count = 0;
-			do {
-				curr = queue.poll();
+			for (int i = 0; i < size; i++) {
+				TreeNode curr = queue.poll();
 				sum += curr.val;
-				count++;
 
 				if (curr.left != null) {
 					queue.add(curr.left);
+					count++;
 				}
 				if (curr.right != null) {
 					queue.add(curr.right);
+					count++;
 				}
-			} while (curr != start);
-			res.add(((double) sum / (double) count));
+			}
+			res.add(((double) sum / (double) size));
+			size = count;
 		}
 		return res;
 	}
