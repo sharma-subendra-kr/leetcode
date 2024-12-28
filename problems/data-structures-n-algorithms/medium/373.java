@@ -27,16 +27,16 @@ class S373 {
 		int len2 = nums2.length;
 		List<List<Integer>> res = new ArrayList<>();
 		PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[0] + a[1]) - (b[0] + b[1]));
-		for (int i = 0; i < len1 && i < k; i++) {
-			pq.add(new int[]{nums1[i], nums2[0], 0});
+		for (int i = 0; i < len2 && i < k; i++) {
+			pq.add(new int[]{nums1[0], nums2[i], 0});
 		}
 
 		while (!pq.isEmpty() && k > 0) {
 			int[] top = pq.poll();
 			res.add(Arrays.asList(top[0], top[1]));
 			k--;
-			if (top[2] != len2 - 1) {
-				pq.add(new int[]{top[0], nums2[top[2] + 1], top[2] + 1});
+			if (top[2] != len1 - 1) {
+				pq.add(new int[]{nums1[top[2] + 1], top[1], top[2] + 1});
 			}
 		}
 		return res;
