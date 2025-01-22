@@ -34,7 +34,7 @@ class S224 {
 				i = j - 1;
 			} else if (s.charAt(i) != ')' && s.charAt(i) != ' ') {
 				stack.push("" + s.charAt(i));
-			} else if (s.charAt(i) == ')') {
+			} else if (s.charAt(i) != '(' && s.charAt(i) != ' ') {
 				processExp(stack, temp, mp);
 			}
 			i++;
