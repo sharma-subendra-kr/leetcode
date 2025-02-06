@@ -38,10 +38,8 @@ class S57 {
 
 		int[] interval = new int[]{newInterval[0], newInterval[1]};
 		while (i < len && intervals[i][0] <= newInterval[1]) {
-			interval = new int[]{
-				Math.min(intervals[i][0], interval[0]),
-				Math.max(intervals[i][1], interval[1])
-			};
+			interval[0] = Math.min(intervals[i][0], interval[0]);
+			interval[1] = Math.max(intervals[i][1], interval[1]);
 			i++;
 		}
 		res[left++] = interval;
