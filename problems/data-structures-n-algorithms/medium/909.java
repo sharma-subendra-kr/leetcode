@@ -50,10 +50,12 @@ class S909 {
 				int r = idx[0];
 				int c = idx[1];
 				int dest = board[r][c];
-				if (dest != -1 && (visited[dest] == 0 || visited[dest] > steps + 1) && i != start) {
+				if (dest != -1 && visited[dest] == 0) {
+					// no need to check if visited later is less in steps value because previous visited is always less
 					queue.add(new int[]{dest, steps + 1});
 					visited[dest] = steps + 1;
-				} else if (dest == -1 && (visited[i] == 0 || visited[i] > steps + 1)) {
+				} else if (dest == -1 && visited[i] == 0) {
+					// no need to check if visited later is less in steps value because previous visited is always less
 					queue.add(new int[]{i, steps + 1});
 					visited[i] = steps + 1;
 				}
