@@ -7,8 +7,8 @@ class S322 {
 	public static void main (String[] args) {
 		// int[] coins = new int[]{1, 2, 5};
 		// int amount = 11;
-		// int[] coins = new int[]{2};
-		// int amount = 3;
+		int[] coins = new int[]{2};
+		int amount = 3;
 		// int[] coins = new int[]{1};
 		// int amount = 0;
 		// int[] coins = new int[]{186, 419, 83, 408};
@@ -17,37 +17,52 @@ class S322 {
 		// int amount = 17;
 		// int[] coins = new int[]{3, 2};
 		// int amount = 7;
-		int[] coins = new int[]{3, 7, 405, 436};
-		int amount = 8839;
+		// int[] coins = new int[]{3, 7, 405, 436};
+		// int amount = 8839;
 
 		int res = coinChange(coins, amount);
 		System.out.println(res);
 	}
 
 	public static int coinChange (int[] coins, int amount) {
-		Arrays.sort(coins);
 		int len = coins.length;
-		long[] dp = new long[amount + 1];
-		Arrays.fill(dp, Integer.MAX_VALUE);
+		int[] dp = new int[amount + 1];
+		Arrays.sort(coins);
+		Arrays.fill(dp, amount + 1);
 		dp[0] = 0;
+
 		for (int i = 0; i < len; i++) {
-			int num = 1;
-			int j = num * coins[i];
-			while (j <= amount) {
-				dp[j] = Math.min(num / coins[i] + dp[j - num], dp[j]);
-				num += coins[i];
-				num++;
-				j = num * coins[i];
+			for (int j = coins[i]; j <= amount; j++) {
+				dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);
 			}
-			// int q = j / coins[i];
-			// dp[j] = Math.min(q + dp[j - q * coins[i]], dp[j]);
-			// int diff = (amount - j);
-			// dp[amount] = Math.min(dp[amount], dp[j] + dp[diff]);
-
 		}
-
-		return dp[amount] == Integer.MAX_VALUE ? -1 : (int) dp[amount];
+		return dp[amount] == amount + 1 ? -1 : dp[amount];
 	}
+
+	// public static int coinChange (int[] coins, int amount) {
+	// 	Arrays.sort(coins);
+	// 	int len = coins.length;
+	// 	long[] dp = new long[amount + 1];
+	// 	Arrays.fill(dp, Integer.MAX_VALUE);
+	// 	dp[0] = 0;
+	// 	for (int i = 0; i < len; i++) {
+	// 		int num = 1;
+	// 		int j = num * coins[i];
+	// 		while (j <= amount) {
+	// 			dp[j] = Math.min(num / coins[i] + dp[j - num], dp[j]);
+	// 			num += coins[i];
+	// 			num++;
+	// 			j = num * coins[i];
+	// 		}
+	// 		// int q = j / coins[i];
+	// 		// dp[j] = Math.min(q + dp[j - q * coins[i]], dp[j]);
+	// 		// int diff = (amount - j);
+	// 		// dp[amount] = Math.min(dp[amount], dp[j] + dp[diff]);
+	//
+	// 	}
+	//
+	// 	return dp[amount] == Integer.MAX_VALUE ? -1 : (int) dp[amount];
+	// }
 
 	// public static int coinChange (int[] coins, int amount) {
 	// 	Arrays.sort(coins);
