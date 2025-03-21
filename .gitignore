@@ -6,3 +6,5 @@ node_modules
 out
 .idea/sonarlint/issuestore
 rough
+
+**/.DS_Store
