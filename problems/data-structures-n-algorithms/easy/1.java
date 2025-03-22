@@ -38,4 +38,28 @@ class S1 {
 		}
 		return null;
 	}
+
+	// public static int[] twoSum (int[] nums, int target) {
+	// 	// Here index is required so this approach doesn't work
+	// 	int len = nums.length;
+	// 	int[] res = new int[2];
+	//
+	// 	Arrays.sort(nums);
+	//
+	// 	int left = 0;
+	// 	int right = len - 1;
+	// 	while (left < right) {
+	// 		int sum = nums[left] + nums[right];
+	// 		if (sum > target) {
+	// 			right--;
+	// 		} else if (sum < target) {
+	// 			left++;
+	// 		} else {
+	// 			res[0] = nums[left];
+	// 			res[1] = nums[right];
+	// 			return res;
+	// 		}
+	// 	}
+	// 	return null;
+	// }
 }
