@@ -12,6 +12,25 @@ class S162 {
 		System.out.println(res);
 	}
 
+	// My soln
+	// public static int findPeakElement (int[] nums) {
+	// 	int mid = 0;
+	// 	int low = 0;
+	// 	int high = nums.length - 1;
+	//
+	// 	while (low < high) {
+	// 		mid = (low + high) / 2;
+	// 		mid = (high - low + 1) % 2 == 0 ? mid + 1 : mid;
+	// 		if (nums[mid] > nums[low]) {
+	// 			low = mid;
+	// 		} else {
+	// 			low = 0;
+	// 			high = mid - 1;
+	// 		}
+	// 	}
+	// 	return low;
+	// }
+
 	public static int findPeakElement (int[] nums) {
 		int mid = 0;
 		int low = 0;
@@ -19,12 +38,10 @@ class S162 {
 
 		while (low < high) {
 			mid = (low + high) / 2;
-			mid = (high - low + 1) % 2 == 0 ? mid + 1 : mid;
-			if (nums[mid] > nums[low]) {
-				low = mid;
+			if (nums[mid] > nums[mid + 1]) {
+				high = mid;
 			} else {
-				low = 0;
-				high = mid - 1;
+				low = mid + 1;
 			}
 		}
 		return low;
