@@ -6,24 +6,49 @@ import java.util.HashSet;
 
 class S236 {
 	public static void main (String[] args) {
-		// TreeNode root = new TreeNode(3);
-		// root.left = new TreeNode(5);
-		// root.right = new TreeNode(1);
-		// root.left.left = new TreeNode(6);
-		// root.left.right = new TreeNode(2);
-		// root.left.right.left = new TreeNode(7);
-		// root.left.right.right = new TreeNode(4);
-		// root.right.left = new TreeNode(0);
-		// root.right.right = new TreeNode(8);
-		// TreeNode res = lowestCommonAncestor(root, root.left, root.left.right.right);
-		TreeNode root = new TreeNode(1);
-		root.right = new TreeNode(2);
-		TreeNode res = lowestCommonAncestor(root, root.right, root);
+		TreeNode root = new TreeNode(3);
+		root.left = new TreeNode(5);
+		root.right = new TreeNode(1);
+		root.left.left = new TreeNode(6);
+		root.left.right = new TreeNode(2);
+		root.left.right.left = new TreeNode(7);
+		root.left.right.right = new TreeNode(4);
+		root.right.left = new TreeNode(0);
+		root.right.right = new TreeNode(8);
+		TreeNode res = lowestCommonAncestor(root, root.left, root.left.right.right);
+		// TreeNode root = new TreeNode(1);
+		// root.right = new TreeNode(2);
+		// TreeNode res = lowestCommonAncestor(root, root.right, root);
 		System.out.println(res.val);
 
 	}
 
 	public static TreeNode lowestCommonAncestor (TreeNode root, TreeNode p, TreeNode q) {
+		TreeNode curr = null;
+		if (root == p) {
+			curr = p;
+		}
+		if (root == q) {
+			curr = q;
+		}
+		if (root == null) {
+			return null;
+		}
+		TreeNode l = lowestCommonAncestor(root.left, p, q);
+		TreeNode r = lowestCommonAncestor(root.right, p, q);
+
+		if (l == null) {
+			l = curr;
+		} else if (r == null) {
+			r = curr;
+		}
+		if (l != null && r != null) {
+			return root;
+		}
+		return l != null ? l : r;
+	}
+
+	public static TreeNode lowestCommonAncestor2 (TreeNode root, TreeNode p, TreeNode q) {
 		HashSet<TreeNode> set = new HashSet<>();
 		boolean res = findBranch(root, p, set);
 		if (!res) {
